@@ -1,0 +1,30 @@
+import os
+import shutil
+from win32com.client import Dispatch
+input_folder = "path_to_your_input_folder"
+output_folder = "path_to_your_output_folder"
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
+word = Dispatch('Word.Application')
+word.Visible = False 
+for filename in sorted(os.listdir(input_folder)):
+    input_path = os.path.join(input_folder, filename)
+    output_path = os.path.join(output_folder, filename)
+    if filename.endswith('.doc') or filename.endswith('.docx') and not filename.startswith('~'):
+        try:
+            doc = word.Documents.Open(input_path)
+            try:
+                output_path = os.path.join(output_folder, f"{os.path.splitext(filename)[0]}.pdf")
+                doc.SaveAs(output_path, FileFormat=17)
+            except Exception as save_error:
+                print(f"Error saving {filename} as PDF: {save_error}")
+            doc.Close()
+        except Exception as open_error:
+            print(f"Error opening {filename}: {open_error}")
+    elif filename.endswith('.pdf'):
+        try:
+            shutil.copy2(input_path, output_path)
+        except Exception as copy_error:
+            print(f"Error copying {filename}: {copy_error}")
+word.Quit()
+print("批量转换和复制完成。")
