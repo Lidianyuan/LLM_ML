@@ -67,7 +67,7 @@ Normalization and feature engineering
 Input: ./data/extracted/
 Output: ./data/cleaned/cleaned_data.csv
 
-### 5. `ML and Data`
+### 5. `Data and ML`
 
 Trains a sample machine learning model using the cleaned dataset.
 Only one representative model  is provided here, but the framework supports multiple algorithms.
