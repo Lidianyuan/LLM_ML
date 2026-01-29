@@ -1,4 +1,4 @@
-# Prompt Engineering Accelerates the Data-Driven Discovery of Photocatalysts via an LLM-Based Mixture-of-Experts Strategy  
+# Prompt Engineering Accelerates the Data-Driven Discovery of Photocatalysts via an LLM-Based Model Ensemble Strategy  
 > Automated extraction of scientific information from literature using multiple large language models (LLMs), applied to photocatalytic hydrogen evolution based on graphitic carbon nitride.  
 
 ---
