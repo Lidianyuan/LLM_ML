@@ -67,11 +67,13 @@ Normalization and feature engineering
 Input: ./data/extracted/
 Output: ./data/cleaned/cleaned_data.csv
 
-### 5. `ML.ipynb`
+### 5. `ML and Data`
 
 Trains a sample machine learning model using the cleaned dataset.
 Only one representative model  is provided here, but the framework supports multiple algorithms.
 The notebook includes:
+
+preprocessed dataset
 
 Model training and evaluation
 
